@@ -2,17 +2,137 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/268ac8feec.js"></script>
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+				
+				for (i=0; i<geemails.length; i++){
+
+					var senderBox = document.createElement('div')
+					senderBox.className = "sender";
+					senderBox.innerHTML = geemails[i].sender
+					senderStart.appendChild(senderBox);
+
+					//geemails.body.fontcolor(#dddddd)
+					var subjectBox = document.createElement('div')
+					subjectBox.className = "subject";
+					subjectBox.innerHTML = geemails[i].subject + " - " + geemails[i].body
+					subjectStart.appendChild(subjectBox);
+
+					//substring(5, 21)
+					var dateBox = document.createElement('div')
+					dateBox.className = "date";
+					dateBox.innerHTML = geemails[i].date
+					dateStart.appendChild(dateBox);
+				}
+				var totalEmails = document.createElement('div')
+					totalEmails.className = "count";
+					totalEmails.innerHTML = "1 - " + geemails.length + " of " + geemails.length
+					emailCounter.appendChild(totalEmails);
+
+				var totalEmailsCount = document.createElement('div')
+					totalEmailsCount.className = "count";
+					totalEmailsCount.innerHTML = geemails.length
+					inboxCounter.appendChild(totalEmailsCount);
+				console.log(geemails);
       };
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+			<header>
+					<i class="fas fa-bars">
+							<div class="container" id="main">
+									<div id="tooltipbars">
+										<div id="tooltiptextbars">Main menu</div>
+									</div>
+							</div>
+					</i>
+					<i class="far fa-envelope"></i>
+					<h2 id="topHeader">Gee-mail</h2>
+					<div id="topnav">
+						<input type="text" placeholder="Search mail">
+					</div>
+					<h2 id="acctSym">J</h2>
+					<i class="fas fa-th"></i>
+					<i class="far fa-question-circle"></i>
+			</header>
+			<br><br>
+			<hr class="topheader">
+			<section>
+					<aside>
+						<div id="compose">
+							<i class="fas fa-plus"></i>
+							<span class="composetext">Compose</span>
+						</div>	
+							<br><br>
+							<div class="sidebaricons">
+								<i class="fas fa-inbox"></i>
+							</div>
+								<span class="sidebartext">Inbox</span><span id="inboxCounter"></span>
+							</div>	
+							<br><br>
+							<div class="sidebaricons">
+								<i class="fas fa-star-of-david"></i>
+							</div>
+								<span class="sidebartext">Starred</span>
+								<br><br>
+								<div class="sidebaricons">
+										<i class="fas fa-clock"></i>
+									</div>
+										<span class="sidebartext">Snoozed</span>
+										<br><br>
+						<div class="sidebaricons">
+								<i class="fas fa-angle-double-right"></i>
+							</div>
+								<span class="sidebartext">Important</span>
+								<br><br>
+						<div class="sidebaricons">
+								<i class="fas fa-paper-plane"></i>
+							</div>
+								<span class="sidebartext">Sent</span>
+								<br><br>
+						<div class="sidebaricons">
+								<i class="fas fa-file"></i>
+							</div>
+								<span class="sidebartext">Drafts</span>
+								<br><br>
+						<div class="sidebaricons">
+								<i class="fas fa-folder"></i>
+							</div>
+								<span class="sidebartext">Categories</span>
+					</aside>
+					<i class="far fa-square"></i>
+					<i class="fas fa-sort-down"></i>
+					<i class="fas fa-redo"></i>
+					<i class="fas fa-ellipsis-v"></i>
+					<i class="fas fa-cog"></i>
+					<i class="fas fa-chevron-right"></i>
+					<i class="fas fa-chevron-left"></i>
+					<div id="emailCounter"></div>
+					<br>
+					<hr class="lineprimary">
+					<div id="primary">
+						<i class="fas fa-inbox"></i>
+					</div>
+						<span class="inboxes">Primary</span>
+					<div id="social">
+						<i class="fas fa-user-friends"></i>
+					</div>
+						<span class="inboxes">Social</span>
+					<div id="promotions">
+						<i class="fas fa-tag"></i>
+					</div>
+					<span class="inboxes">Promotions</span>
+			</section>
+			<br>
+			<hr class="lineemail">
+			<section>
+				<p id="senderStart"></p>
+				<p id="subjectStart"></p>
+				<p id="dateStart"></p>
+			</section>
 	</body>
 </html>

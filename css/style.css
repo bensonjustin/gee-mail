@@ -1,0 +1,239 @@
+body{
+    font-family: 'Poppins', sans-serif; 
+}
+.topheader{
+    border: solid;
+    color: #eeeeee;
+    margin: 25 -10 20 -10px;
+}
+.fa-bars{
+    float: left;
+    margin: 15px 15px 0px 15px;
+    font-size: 150%;
+    color: #727272;
+}
+#tooltipbars{
+    position: relative;
+    display: inline-block;
+}
+.fa-bars #tooltiptextbars{
+    visibility: hidden;
+    position: absolute;
+}
+.fa-bars:hover #tooltiptextbars{
+    visibility: visible;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-left: -10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #424242;
+    color: white;
+}
+.fa-bars:hover{
+    margin: 5px;
+    background-color: #dddddd;
+    background-size: 100px;
+    padding: 10px;
+    border-radius: 50px;
+}
+.fa-envelope{
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 300%;
+    color: #D44638;
+}
+.fa-envelope:hover{
+    margin: -5px;
+    margin-right: -10px;
+    background-color: #dddddd;
+    background-size: 100px;
+    padding: 10px;
+    border-radius: 50px;
+}
+#topHeader{
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #727272;
+    font-family: 'Poppins', sans-serif;
+}
+#topnav{
+    float: left;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+input[type=text]{
+    font-size: 150%;
+    color: #727272;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    width: 150%;
+}
+#acctSym{
+    float: right;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D44638;
+    border-radius: 40px;
+}
+.fa-th{
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 175%;
+    color: #727272;
+}
+.fa-question-circle{
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 175%;
+    color: #727272;
+}
+aside{
+    float:left;
+    margin-right: 135px;
+}
+.fa-plus{
+    float: left;
+    font-size: 150%;
+    color: #D44638;
+}
+.composetext{
+    padding-left: 15px;
+}
+#compose{
+    border-style: outset;
+    border-radius: 30px;
+    padding: 15px;
+}
+.sidebaricons{
+    float: left;
+    margin-left: 10px;
+    font-size: 150%;
+    color: #727272;
+}
+.sidebartext{
+    margin-left: 15px;
+}
+.fa-square{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-top: 20px;
+}
+.fa-sort-down{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.fa-redo{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.fa-ellipsis-v{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.fa-cog{
+    float: right;
+    font-size: 150%;
+    color: #727272;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.fa-chevron-right{
+    float: right;
+    font-size: 150%;
+    color: #727272;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.fa-chevron-left{
+    float: right;
+    font-size: 150%;
+    color: #727272;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+#primary{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-top: 5px;
+}
+#social{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+#promotions{
+    float: left;
+    font-size: 150%;
+    color: #727272;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+.inboxes{
+    float: left;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.lineprimary{
+    border: solid;
+    color: #eeeeee;
+    margin-top: 30px;
+    margin-left: 285px;
+}
+.lineemail{
+    border: solid;
+    color: #eeeeee;
+    margin-top: 20px;
+    margin-left: 285px;
+}
+#senderStart{
+    float: left;
+    column-count: 1;
+}
+#subjectStart{
+    float: left;
+    margin-left: 75px;
+    column-count: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 800px;
+}
+#dateStart{
+    float: right;
+    column-count: 1;
+}
+#emailCounter{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#inboxCounter{
+    float: right;
+    margin-left: 50px;
+}
