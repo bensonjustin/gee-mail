@@ -2,6 +2,7 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<link rel="icon" href="http://www.iconarchive.com/download/i98301/dakirby309/simply-styled/Gmail.ico">
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/268ac8feec.js"></script>
     <script>
@@ -9,36 +10,87 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
 				// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 				
+				var totalEmails = document.createElement('div');
+					totalEmails.className = "counts";
+					totalEmails.innerHTML = "1 of 1"
+					emailCounter.appendChild(totalEmails);
+						
+				var totalEmailsCount = document.createElement('div');
+					totalEmailsCount.id = "count";
+					totalEmailsCount.innerHTML = geemails.length;
+					inboxCounter.appendChild(totalEmailsCount);
+
+					var emailBox = document.createElement('div');
+					allEmails.appendChild(emailBox);
+
 				for (i=0; i<geemails.length; i++){
 
-					var senderBox = document.createElement('div')
+					var senderBox = document.createElement('div');
 					senderBox.className = "sender";
-					senderBox.innerHTML = geemails[i].sender
-					senderStart.appendChild(senderBox);
+					senderBox.innerHTML = geemails[i].sender;
+					emailBox.appendChild(senderBox);
 
-					//geemails.body.fontcolor(#dddddd)
-					var subjectBox = document.createElement('div')
+					var subjectBox = document.createElement('div');
 					subjectBox.className = "subject";
-					subjectBox.innerHTML = geemails[i].subject + " - " + geemails[i].body
-					subjectStart.appendChild(subjectBox);
+					subjectBox.innerHTML = geemails[i].subject;
+					subjectBox.addEventListener('click', showEmail)
+					emailBox.appendChild(subjectBox);
 
-					//substring(5, 21)
-					var dateBox = document.createElement('div')
+					var bodyBox = document.createElement('p');
+					bodyBox.className = "theBody";
+					bodyBox.style.color = "#aaaaaa"
+					bodyBox.innerHTML = geemails[i].body;
+					subjectBox.appendChild(bodyBox);
+
+					var dateBox = document.createElement('div');
 					dateBox.className = "date";
-					dateBox.innerHTML = geemails[i].date
-					dateStart.appendChild(dateBox);
-				}
-				var totalEmails = document.createElement('div')
-					totalEmails.className = "count";
-					totalEmails.innerHTML = "1 - " + geemails.length + " of " + geemails.length
-					emailCounter.appendChild(totalEmails);
+					dateBox.innerHTML = geemails[i].date;
+					emailBox.appendChild(dateBox);
 
-				var totalEmailsCount = document.createElement('div')
-					totalEmailsCount.className = "count";
-					totalEmailsCount.innerHTML = geemails.length
-					inboxCounter.appendChild(totalEmailsCount);
-				console.log(geemails);
-      };
+					allEmails.appendChild(emailBox);
+
+				}
+
+					function showEmail(){
+						var emailBody = this.querySelector(".theBody");
+						if (emailBody.style.display === "block"){
+							emailBody.style.display = "none";
+						}else{
+							emailBody.style.display = "block";
+						}
+				}
+			}
+
+var newEmail = setInterval(genEmail, 3000);
+					
+	function genEmail(){
+	var newMail = getNewMessage()
+	/* var newEmailBox = document.createElement('div');
+	newEmailBox.id = "randomEmails";
+//	newEmailBox.innerHTML = "";
+	emailBox.appendChild(newEmailBox); */
+
+/* 	var senderBox = document.createElement('div');
+					senderBox.className = "sender";
+					senderBox.innerHTML = newMail.sender;
+					emailBox.appendChild(senderBox); */
+/*
+	var nextEmailSubject = newMail.subject;
+	nextEmailSubject.className = "nextEmailSub";
+	allEmails.innerHTML += nextEmailSubject + "<br>";
+	
+	var nextEmailBody = newMail.body;
+	nextEmailBody.className = "nextEmailBod";
+	allEmails.innerHTML += nextEmailBody + "<br>";
+
+	var nextEmailDate = newMail.date;
+	nextEmailDate.className = "nextEmailD";
+	allEmails.innerHTML += nextEmailDate + "<br>";
+
+	count.innerHTML++;
+*/
+}
+			
     </script>
 	</head>
 	<body>
@@ -130,9 +182,9 @@
 			<br>
 			<hr class="lineemail">
 			<section>
-				<p id="senderStart"></p>
-				<p id="subjectStart"></p>
-				<p id="dateStart"></p>
+				<div id="allEmails">
+				</div>
+				<!-- <div id="emailBox"></div> -->
 			</section>
 	</body>
 </html>

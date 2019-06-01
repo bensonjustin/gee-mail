@@ -103,6 +103,7 @@ input[type=text]{
 aside{
     float:left;
     margin-right: 135px;
+    height: 100%;
 }
 .fa-plus{
     float: left;
@@ -199,6 +200,14 @@ aside{
     margin-left: 20px;
     margin-top: 5px;
 }
+#emailCounter{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#inboxCounter{
+    float: right;
+}
 .lineprimary{
     border: solid;
     color: #eeeeee;
@@ -213,27 +222,68 @@ aside{
 }
 #senderStart{
     float: left;
-    column-count: 1;
 }
 #subjectStart{
     float: left;
     margin-left: 75px;
-    column-count: 1;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
+    max-width: 400px;
     text-overflow: ellipsis;
-    max-width: 800px;
+}
+/* #hyphenStart{
+    float: left;
+    margin-top: 15px;
+    margin-right: 5px;
+} */
+#bodyStart{
+    float: left;
+    display: none;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    max-width: 400px;
 }
 #dateStart{
     float: right;
-    column-count: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
 }
-#emailCounter{
-    float: right;
-    margin-right: 20px;
-    margin-top: 20px;
+.sender{
+    /* float: left; */
+    display: inline;
 }
-#inboxCounter{
-    float: right;
-    margin-left: 50px;
+.subject{
+    /* float: left; */
+    display: inline;
+    margin: 50px;
+}
+.theBody{
+    /* float: left; */
+    display: none;
+    margin: 50px;
+}
+.date{
+    /* float:right; */
+    display: inline;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 50px;
+}
+.nextEmailSend{
+    display: inline;
+}
+.nextEmailSub{
+    display: inline;
+}
+.nextEmailBod{
+    display: inline;
+}
+.nextEmailD{
+    display: inline;
+}
+#allEmails{
+    display: inline;
 }
