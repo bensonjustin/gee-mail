@@ -263,7 +263,6 @@ aside{
 .theBody{
     /* float: left; */
     display: none;
-    margin: 50px;
 }
 .date{
     /* float:right; */

@@ -20,21 +20,25 @@
 					totalEmailsCount.innerHTML = geemails.length;
 					inboxCounter.appendChild(totalEmailsCount);
 
-					var emailBox = document.createElement('div');
-					allEmails.appendChild(emailBox);
+					/* var emailBox = document.createElement('div');
+					allEmails.appendChild(emailBox); */
 
 				for (i=0; i<geemails.length; i++){
+
+					var wrapper = document.createElement('div');
+					wrapper.className = "container";
+					allEmails.appendChild(wrapper);
 
 					var senderBox = document.createElement('div');
 					senderBox.className = "sender";
 					senderBox.innerHTML = geemails[i].sender;
-					emailBox.appendChild(senderBox);
+					wrapper.appendChild(senderBox);
 
 					var subjectBox = document.createElement('div');
 					subjectBox.className = "subject";
 					subjectBox.innerHTML = geemails[i].subject;
 					subjectBox.addEventListener('click', showEmail)
-					emailBox.appendChild(subjectBox);
+					wrapper.appendChild(subjectBox);
 
 					var bodyBox = document.createElement('p');
 					bodyBox.className = "theBody";
@@ -45,9 +49,7 @@
 					var dateBox = document.createElement('div');
 					dateBox.className = "date";
 					dateBox.innerHTML = geemails[i].date;
-					emailBox.appendChild(dateBox);
-
-					allEmails.appendChild(emailBox);
+					wrapper.appendChild(dateBox);
 
 				}
 
@@ -59,22 +61,56 @@
 							emailBody.style.display = "block";
 						}
 				}
-			}
 
-var newEmail = setInterval(genEmail, 3000);
+	var newEmail = setInterval(genEmail, 3000);
 					
 	function genEmail(){
 	var newMail = getNewMessage()
-	/* var newEmailBox = document.createElement('div');
-	newEmailBox.id = "randomEmails";
-//	newEmailBox.innerHTML = "";
-	emailBox.appendChild(newEmailBox); */
 
-/* 	var senderBox = document.createElement('div');
-					senderBox.className = "sender";
-					senderBox.innerHTML = newMail.sender;
-					emailBox.appendChild(senderBox); */
-/*
+	var wrapper = document.createElement('div');
+		wrapper.className = "container";
+		allEmails.appendChild(wrapper);
+
+		var senderBox = document.createElement('div');
+		senderBox.className = "sender";
+		senderBox.innerHTML = newMail.sender;
+		wrapper.appendChild(senderBox);
+
+		var subjectBox = document.createElement('div');
+		subjectBox.className = "subject";
+		subjectBox.innerHTML = newMail.subject;
+		subjectBox.addEventListener('click', showEmail)
+		wrapper.appendChild(subjectBox);
+
+		var bodyBox = document.createElement('p');
+		bodyBox.className = "theBody";
+		bodyBox.style.color = "#aaaaaa"
+		bodyBox.innerHTML = newMail.body;
+		subjectBox.appendChild(bodyBox);
+
+		var dateBox = document.createElement('div');
+		dateBox.className = "date";
+		dateBox.innerHTML = newMail.date;
+		wrapper.appendChild(dateBox);
+
+		function showEmail(){
+						var emailBody = this.querySelector(".theBody");
+						if (emailBody.style.display === "block"){
+							emailBody.style.display = "none";
+						}else{
+							emailBody.style.display = "block";
+						}
+				}
+		
+		count.innerHTML++;
+	}
+}
+	/*
+	var senderBox = document.createElement('div');
+	senderBox.className = "sender";
+	senderBox.innerHTML = newMail.sender;
+	emailBox.appendChild(senderBox);
+
 	var nextEmailSubject = newMail.subject;
 	nextEmailSubject.className = "nextEmailSub";
 	allEmails.innerHTML += nextEmailSubject + "<br>";
@@ -88,8 +124,8 @@ var newEmail = setInterval(genEmail, 3000);
 	allEmails.innerHTML += nextEmailDate + "<br>";
 
 	count.innerHTML++;
-*/
-}
+
+ */
 			
     </script>
 	</head>
@@ -183,8 +219,6 @@ var newEmail = setInterval(genEmail, 3000);
 			<hr class="lineemail">
 			<section>
 				<div id="allEmails">
-				</div>
-				<!-- <div id="emailBox"></div> -->
 			</section>
 	</body>
 </html>
