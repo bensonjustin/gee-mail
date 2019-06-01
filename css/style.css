@@ -104,6 +104,7 @@ aside{
     float:left;
     margin-right: 135px;
     height: 100%;
+    position: fixed;
 }
 .fa-plus{
     float: left;
@@ -132,6 +133,7 @@ aside{
     font-size: 150%;
     color: #727272;
     margin-top: 20px;
+    margin-left: 285px;
 }
 .fa-sort-down{
     float: left;
@@ -180,6 +182,7 @@ aside{
     font-size: 150%;
     color: #727272;
     margin-top: 5px;
+    margin-left: 285px;
 }
 #social{
     float: left;
@@ -231,11 +234,6 @@ aside{
     max-width: 400px;
     text-overflow: ellipsis;
 }
-/* #hyphenStart{
-    float: left;
-    margin-top: 15px;
-    margin-right: 5px;
-} */
 #bodyStart{
     float: left;
     display: none;
@@ -254,22 +252,26 @@ aside{
 .sender{
     /* float: left; */
     display: inline;
+    margin-left: 285px;
 }
 .subject{
     /* float: left; */
     display: inline;
-    margin: 50px;
+    column-span: inherit;
 }
 .theBody{
     /* float: left; */
     display: none;
+    column-span: inherit;
+
 }
 .date{
     /* float:right; */
     display: inline;
+    column-span: inherit;
+
     overflow: hidden;
     white-space: nowrap;
-    margin: 50px;
 }
 .nextEmailSend{
     display: inline;
@@ -285,4 +287,8 @@ aside{
 }
 #allEmails{
     display: inline;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
 }
